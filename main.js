@@ -15,7 +15,14 @@ document.addEventListener("scroll", () => {
 const navbarMenu = document.querySelector(".navbar__menu");
 navbarMenu.addEventListener("click", (event) => {
   //   console.log(event.target.dataset.link);
+  navbarMenu.classList.remove("open");
   scrollIntoView(event.target.dataset.link); // 현재 선택된아이
+});
+
+// Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
+navbarToggleBtn.addEventListener("click", () => {
+  navbarMenu.classList.toggle("open");
 });
 
 // Handle click on "contact me" button on home
